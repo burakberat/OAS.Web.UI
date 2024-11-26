@@ -10,9 +10,10 @@ import { AlisverisListComponent } from '../alisveris-list/alisveris-list.compone
 })
 export class PersonelListComponent implements OnInit {
   personelList: Personel[] | undefined;
+  seciliPersonel: Personel | undefined;
 
   //injection'lar yönetilir.
-  constructor() {}
+  constructor() { }
 
   //ilgili list veya yüklenmesi gereken verileri burada yükleriz.
   ngOnInit(): void {
@@ -21,5 +22,9 @@ export class PersonelListComponent implements OnInit {
       { id: 1, ad: 'Hakan', soyad: 'Calik', birimAd: 'Haberleşme', birimId: 2 },
       { id: 1, ad: 'Julide', soyad: 'Adivar', birimAd: 'Bakim', birimId: 3 },
     ];
+  }
+
+  personelAlisverisListesiGetir(item: Personel) {
+    this.seciliPersonel = item;
   }
 }

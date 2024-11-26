@@ -15,7 +15,7 @@
       <td>{{ item.ad }}</td>
       <td>{{ item.soyad }}</td>
       <td>{{ item.birimAd }}</td>
-      <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Ekle</button>
+      <td><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="personelAlisverisListesiGetir(item)">Ekle</button>
       </td>
     </tr>
     }
