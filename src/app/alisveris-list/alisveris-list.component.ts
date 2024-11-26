@@ -16,6 +16,7 @@ export class AlisverisListComponent implements OnInit {
   @Input() alisVerisList: AlisVerisList[] = [];
   urunList: Urun[] | undefined;
   secilenUrunId: number | undefined;
+  girilenMiktar: number | undefined;
 
   constructor() { }
 
@@ -42,9 +43,9 @@ export class AlisverisListComponent implements OnInit {
 
     let secilenUrun = this.urunList?.filter(d => d.id == this.secilenUrunId)[0];
     if (this.alisVerisList?.filter(d => d.id == this.secilenUrunId).length > 0) {
-      return alert("Urun sepetinizde var");
+      return alert("Miktar güncellendi.");
     }
-    this.alisVerisList.push({ id: this.secilenUrunId, urunId: this.secilenUrunId, urunAd: secilenUrun?.ad! })
+    this.alisVerisList.push({ id: this.secilenUrunId, urunId: this.secilenUrunId, urunAd: secilenUrun?.ad!, miktar: this.girilenMiktar })
 
   }
 
